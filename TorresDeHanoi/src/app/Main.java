@@ -1,13 +1,16 @@
 package app;
 
+import pilha.PilhaLista;
+import pilha.PilhaVetor;
+
 public class Main {
 
 	public static void main(String[] args) throws Exception {
 		
-		//PilhaLista pilha = new PilhaLista();
-		/*PilhaVetor pilha = new PilhaVetor(5);
+		PilhaLista<Integer> pilha = new PilhaLista<Integer>();
+		//PilhaVetor<Integer> pilha = new PilhaVetor<Integer>(5);
 		
-        pilha.push(40);
+        pilha.push(15);
         pilha.push(30);
         pilha.push(75);
         System.out.println("Removido: "+pilha.pop());
@@ -17,7 +20,10 @@ public class Main {
         System.out.println("Removido: "+pilha.pop());
         System.out.println("Removido: "+pilha.pop());
         pilha.push(30);
-        System.out.println("Topo: "+pilha.top());*/
+        pilha.libera();
+        pilha.push(16);
+        pilha.push(15);
+        System.out.println("Topo: "+pilha.top());
 				
 	}
 	

@@ -1,19 +1,19 @@
 package pilha;
 import java.util.Arrays;
 
-public class PilhaVetor implements Pilha {
+public class PilhaVetor<T> implements Pilha<T> {
 
 	private int n;
 	private int tam;
-	private int[] vet;
+	private T[] vet;
 		
 	public PilhaVetor(int tamanho) {
 		this.tam = tamanho;
 		this.n = -1;
-		this.vet = new int[this.tam];
+		this.vet = (T[]) new Object [this.tam];
 	}
 	@Override
-	public void push(int v) throws Exception {
+	public void push(T v) throws Exception {
 		try {
 			n++;
 			this.vet[n] = v;
@@ -23,17 +23,17 @@ public class PilhaVetor implements Pilha {
 		
 	}
 	@Override
-	public int pop() throws Exception {
+	public T pop() throws Exception {
 		if (n == -1) {
             throw new Exception("Não há itens na pilha");
         }
-        int v = this.vet[n];
+        T v = this.vet[n];
         this.vet[n] = this.vet[n + 1];
         n--;
         return v;
 	}
 	@Override
-	public int top() throws Exception {
+	public T top() throws Exception {
 		return this.vet[n];
 	}
 	@Override
@@ -42,7 +42,7 @@ public class PilhaVetor implements Pilha {
 	}
 	@Override
 	public void libera() {
-		this.vet = new int[tam];	
+		this.vet = (T[]) new Object [tam];	
 		n = -1;		
 		
 	}

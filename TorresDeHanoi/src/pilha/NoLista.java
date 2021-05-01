@@ -1,22 +1,22 @@
 package pilha;
 
-public class NoLista {
-	private int info;
+public class NoLista<T> {
+	private T info;
 	private NoLista prox;
 	
 	public NoLista() {
 	}
 
-	public NoLista(int info, NoLista prox) {
+	public NoLista(T info, NoLista prox) {
 		this.info = info;
 		this.prox = prox;
 	}
 
-	public int getInfo() {
+	public T getInfo() {
 		return info;
 	}
 
-	public void setInfo(int info) {
+	public void setInfo(T info) {
 		this.info = info;
 	}
 

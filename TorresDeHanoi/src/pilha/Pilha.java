@@ -1,12 +1,12 @@
 package pilha;
 
-public interface Pilha {
+public interface Pilha<T> {
 	
-	public void push(int v) throws Exception;
+	public void push(T v) throws Exception;
 	
-	public int pop() throws Exception;
+	public T pop() throws Exception;
 	
-	public int top() throws Exception;
+	public T top() throws Exception;
 	
 	public boolean vazia();
 	

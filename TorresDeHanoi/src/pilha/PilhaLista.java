@@ -1,6 +1,6 @@
 package pilha;
 
-public class PilhaLista  implements Pilha {
+public class PilhaLista<T>  implements Pilha<T> {
 	
 	private NoLista topo;
 
@@ -9,7 +9,7 @@ public class PilhaLista  implements Pilha {
 	}
 	
 	@Override
-	public void push(int v) throws Exception {
+	public void push(T v) throws Exception {
 		try {
 			NoLista oldTop = topo;
 			topo = new NoLista();
@@ -22,21 +22,21 @@ public class PilhaLista  implements Pilha {
 	}
 
 	@Override
-	public int pop() throws Exception {		
+	public T pop() throws Exception {		
 		if (topo == null) {
             throw new Exception("Não há itens na pilha");
         }
-        int v = topo.getInfo();
+        T v = (T) topo.getInfo();
         topo = topo.getProx();
         return v;
 	}
 
 	@Override
-	public int top() throws Exception {
+	public T top() throws Exception {
 		if (topo == null) {
             throw new Exception("Não há itens na pilha");
         }
-		return topo.getInfo();
+		return (T) topo.getInfo();
 	}
 
 	@Override
