@@ -28,7 +28,11 @@ public class PilhaVetor<T> implements Pilha<T> {
             throw new Exception("Não há itens na pilha");
         }
         T v = this.vet[n];
+        if (n == tam - 1) {
+        this.vet[n] = null;
+        } else {
         this.vet[n] = this.vet[n + 1];
+        }
         n--;
         return v;
 	}
@@ -49,6 +53,10 @@ public class PilhaVetor<T> implements Pilha<T> {
 	@Override
 	public String toString() {
 		return "PilhaVetor [n=" + n + ", tam=" + tam + ", vet=" + Arrays.toString(vet) + "]";
+	}
+	
+	public T getIndex(int index) {
+		return this.vet[index];
 	}
 		
 }
