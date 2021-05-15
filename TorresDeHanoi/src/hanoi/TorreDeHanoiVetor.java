@@ -106,38 +106,26 @@ public class TorreDeHanoiVetor extends MenuTorreDeHanoi {
 	}
 
 	private static void display() {
-		System.out.println("\n#### --- TORRE DE HANOI --- ####");
+		System.out.println("-------------------");
 		for (int i = nDiscos - 1; i >= 0; i--) {
 			String A = " ", B = " ", C = " ";
-			try {
 				A = String.valueOf(torre[0].getIndex(i));
+				B = String.valueOf(torre[1].getIndex(i));
+				C = String.valueOf(torre[2].getIndex(i));
 				if (A.equals("null")) {
 					A = "_";
-				}
-				;
-			} catch (Exception e) {
-			}
-			try {
-				B = String.valueOf(torre[1].getIndex(i));
+				}				
 				if (B.equals("null")) {
 					B = "_";
 				}
-				;
-			} catch (Exception e) {
-			}
-			try {
-				C = String.valueOf(torre[2].getIndex(i));
 				if (C.equals("null")) {
 					C = "_";
 				}
-				;
-			} catch (Exception e) {
-			}
-			System.out.println("  " + A + "  |  " + B + "  |  " + C);
+			System.out.println("|  " + A + "  |  " + B + "  |  " + C + "  |");
 		}
 
-		System.out.println("---------------");
-		System.out.println("  A  |  B  |  C");
+		System.out.println("-------------------");
+		System.out.println("|  A  |  B  |  C  |");
 		System.out.println("\n");
 	}
 
